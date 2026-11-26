@@ -5,11 +5,21 @@ your feed, followers, and following from the terminal.
 
 ## Install
 
+Download a prebuilt binary for macOS, Linux or Windows from
+[Releases](https://github.com/jovanfrandika/yuwen/releases), unpack it, and put `yuwen` on
+your `PATH`:
+
 ```sh
-cargo install --path .
+# macOS (Apple Silicon) example
+curl -L https://github.com/jovanfrandika/yuwen/releases/latest/download/yuwen-v0.1.0-aarch64-apple-darwin.tar.gz | tar xz
+sudo mv yuwen-v0.1.0-aarch64-apple-darwin/yuwen /usr/local/bin/
 ```
 
-Requires Rust 1.85+ (`rustup update`).
+Or build from source (Rust 1.85+):
+
+```sh
+cargo install --git https://github.com/jovanfrandika/yuwen
+```
 
 ## Setup
 

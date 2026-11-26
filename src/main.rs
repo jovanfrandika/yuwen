@@ -188,6 +188,9 @@ fn text_or_stdin(text: Option<String>) -> Result<String> {
 
 fn confirm(prompt: &str) -> Result<bool> {
     // Read from the terminal even if stdin was used for the post text.
+    #[cfg(windows)]
+    let tty = std::fs::File::open("CONIN$");
+    #[cfg(not(windows))]
     let tty = std::fs::File::open("/dev/tty");
     let mut answer = String::new();
     eprint!("{prompt} [y/N] ");
